@@ -27,7 +27,7 @@ public class Author {
     private String email;
     private LocalDate birth;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author" , cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Book> books;
 
