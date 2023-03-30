@@ -16,4 +16,9 @@ public class AuthorService {
     public Author saveAuthor(Author author) {
         return authorRepository.save(author);
     }
+
+    public Author getAuthorById(Long id) {
+        return authorRepository.findById(id)
+                .orElseThrow(() -> new IllegalStateException("Not found Author with id = " + id));
+    }
 }
